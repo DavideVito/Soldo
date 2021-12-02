@@ -11,28 +11,53 @@ import Profile from "./Components/Profile";
 import { ProdottiProvider } from "./Utils/Context/prodotti.context";
 import Ordini from "./Components/Ordini";
 import { UserProvider } from "./Utils/Context/user.context";
-import { green as color } from "@mui/material/colors";
+
 import { OrdiniProvider } from "./Utils/Context/ordini.context";
+
+const lightTheme = createTheme({
+  palette: {
+    type: "light",
+    mode: "light",
+    primary: {
+      main: "#640ff7",
+    },
+    background: {
+      default: "#004ecc",
+      paper: "#73a9ff",
+    },
+    secondary: {
+      main: "#f44336",
+    },
+  },
+});
+
+const darkTheme = createTheme({
+  palette: {
+    type: "dark",
+    mode: "dark",
+    primary: {
+      main: "#29ffff",
+    },
+    background: {
+      default: "#1c273a",
+      paper: "#273652",
+    },
+    secondary: {
+      main: "#f44336",
+    },
+    text: {
+      main: "#000",
+    },
+  },
+});
 
 function App() {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
-  const theme = useMemo(
-    () =>
-      createTheme({
-        palette: {
-          type: prefersDarkMode ? "dark" : "light",
-          mode: prefersDarkMode ? "dark" : "light",
-          primary: {
-            main: color[500],
-          },
-          secondary: {
-            main: "#f44336",
-          },
-          backgroundColor: "#20252c",
-        },
-      }),
-    [prefersDarkMode]
-  );
+  const theme = useMemo(() => {
+    const tema = prefersDarkMode ? darkTheme : lightTheme;
+
+    return tema;
+  }, [prefersDarkMode]);
 
   return (
     <div>
