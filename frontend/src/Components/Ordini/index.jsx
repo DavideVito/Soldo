@@ -19,6 +19,7 @@ import richiesta from "../../Utils/Functions/richiesta";
 import FormOrdini from "./Form";
 import { userContext } from "../../Utils/Context/user.context";
 import { OrdiniContext } from "../../Utils/Context/ordini.context";
+import UploadComponent from "../UploadComponent";
 
 const Ordini = () => {
   const [ordini, getOrdini] = useContext(OrdiniContext);
@@ -54,6 +55,18 @@ const Ordini = () => {
       >
         <FormOrdini />
       </Modal>
+
+      {/*
+      {false && user.admin ? (
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <UploadComponent />
+        </div>
+      ) : (
+        <></>
+      )}
+      
+      
+      */}
       <div style={{ marginTop: "1.5rem", marginBottom: "1rem" }}>
         <Typography textAlign="center" variant="h4">
           Ordini
