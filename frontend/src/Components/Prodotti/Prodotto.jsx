@@ -1,4 +1,10 @@
-import { ListItem, ListItemText, Button, Typography } from "@mui/material";
+import {
+  ListItem,
+  ListItemText,
+  Button,
+  Typography,
+  Avatar,
+} from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { useState } from "react";
@@ -20,6 +26,12 @@ const Prodotto = ({ prodotto, add, aggiungiProdotto, rimuoviProdotto }) => {
   return (
     <>
       <ListItem key={prodotto.id}>
+        <Avatar
+          src={
+            "http://localhost:3001/" + prodotto.percorso ??
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"
+          }
+        />
         <ListItemText
           primary={prodotto.nome}
           secondary={prodotto.prezzoUnitario}

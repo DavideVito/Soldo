@@ -56,17 +56,14 @@ const Ordini = () => {
         <FormOrdini />
       </Modal>
 
-      {/*
-      {false && user.admin ? (
+      {true && user.admin ? (
         <div style={{ display: "flex", justifyContent: "center" }}>
           <UploadComponent />
         </div>
       ) : (
         <></>
       )}
-      
-      
-      */}
+
       <div style={{ marginTop: "1.5rem", marginBottom: "1rem" }}>
         <Typography textAlign="center" variant="h4">
           Ordini

@@ -14,6 +14,15 @@ app.use(cors({ origin: "*" }));
 
 app.use(noCache(), express.static("frontend/build"));
 
+app.use(
+  "/immagini",
+  (req, res, next) => {
+    res.set("Content-Type", "image/png");
+    next();
+  },
+  express.static("immagini")
+);
+
 app.use("/login", loginRoutes);
 app.use("/prodotti", prodottiRoutes);
 app.use("/ordini", ordiniRoutes);
