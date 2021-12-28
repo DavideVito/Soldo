@@ -30,7 +30,7 @@ function UploadComponent(props) {
 
   const acceptedFileItems = acceptedFiles.map(() => (
     <div style={{ display: "flex", justifyContent: "center" }}>
-      <img src={fileUrl} alt="Immagine" />
+      <img src={fileUrl} alt="Immagine" width="150" height="150" />
     </div>
   ));
 

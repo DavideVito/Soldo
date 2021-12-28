@@ -1,10 +1,27 @@
 const mysql = require("mysql2");
-const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "CiaoCia0",
+
+let connParams = {
+  host: "192.168.1.130",
+  user: "Admin",
+  password: "Password",
   database: "ProdottiSoldo",
-});
+};
+
+console.log(
+  "Starting as:",
+  process.env.NODE_ENV === "development" ? "Dev" : "Prod"
+);
+
+if (process.env.NODE_ENV === "development") {
+  connParams = {
+    host: "192.168.1.177",
+    user: "dbsoldo",
+    password: "CiaoCia0",
+    database: "ProdottiSoldo",
+  };
+}
+
+const db = mysql.createConnection(connParams);
 db.connect((err) => {
   // you should probably add reject instead of throwing error
   // reject(new Error());
