@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import Modal from "../../Components/Modal";
-import { Button, TextField, Grid } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 import richiesta from "../../Utils/Functions/richiesta";
 
 const toBase64 = (file) =>
@@ -13,10 +13,9 @@ const toBase64 = (file) =>
   });
 
 function UploadComponent(props) {
-  const { acceptedFiles, fileRejections, getRootProps, getInputProps } =
-    useDropzone({
-      accept: "image/jpeg, image/png",
-    });
+  const { acceptedFiles, getRootProps, getInputProps } = useDropzone({
+    accept: "image/jpeg, image/png",
+  });
 
   const [fileUrl, setFileUrl] = useState("");
 

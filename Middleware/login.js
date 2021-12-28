@@ -28,7 +28,7 @@ router.get("/utente/:email?", (req, res) => {
   if (!email) return res.status(400).send("errro");
   getUtente(email)
     .then((user) => {
-      res.status(201).send(user);
+      res.status(201).send(user ?? {});
     })
     .catch((error) => {
       console.log(error);

@@ -25,10 +25,10 @@ const Prodotto = ({ prodotto, add, aggiungiProdotto, rimuoviProdotto }) => {
 
   return (
     <>
-      <ListItem key={prodotto.id}>
+      <ListItem key={prodotto.id} style={{ gap: "1rem" }}>
         <Avatar
           src={
-            "http://localhost:3001/" + prodotto.percorso ??
+            window.location.href + prodotto.percorso ??
             "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"
           }
         />

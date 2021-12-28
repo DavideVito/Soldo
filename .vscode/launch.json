@@ -11,7 +11,19 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/index.js"
+            "program": "${workspaceFolder}/index.js",
+            "env": {"NODE_ENV": "development"}
+        },{
+            "type": "pwa-node",
+            "name": "Launch Program (PROD)",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/index.js",
+            "env": {
+                
+            }
         }
     ]
 }

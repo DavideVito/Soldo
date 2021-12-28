@@ -15,7 +15,7 @@ FROM
             tipoProdotto,
             email
         from
-            v_ordini
+            v_Ordini
         GROUP BY
             idProdotto,
             idOrdine,
